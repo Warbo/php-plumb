@@ -10,6 +10,11 @@ deftests([
                return ($result === $n)? 0 : get_defined_vars();
              },
 
+  'id2'   => function($n) {
+               $result = plumb([], $n);
+               return ($result === $n)? 0 : get_defined_vars();
+             },
+
   'const' => function($n, $m) {
                $result = plumb([[1]], $n, $m);
                return ($result === $n)? 0 : get_defined_vars();

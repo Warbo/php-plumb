@@ -18,7 +18,8 @@ call_user_func(function() {
                  });
 
   $plumb = curry(function(array $env, array $expr, $arg) use ($chain) {
-                   return $chain(array_merge([$arg], $env), $expr);
+                   return $expr? $chain(array_merge([$arg], $env), $expr)
+                               : $arg;
                  });
 
   $interpret = curry(function(array $e, $x) use ($chain, $plumb) {
