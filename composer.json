@@ -1,7 +1,7 @@
 {
     "name":        "warbo/plumb",
     "description": "An embedded language for defining functions",
-    "livense":     "CC0-1.0",
+    "license":     "CC0-1.0",
     "autoload":    { "files": ["plumb.php"] },
     "require":     { "warbo/core":      "dev-master",
                      "warbo/easycheck": "dev-master" }
