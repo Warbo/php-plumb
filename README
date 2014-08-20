@@ -1,0 +1,22 @@
+= Plumb =
+
+Plumb is a domain-specific language for defining functions, embedded in PHP.
+
+== Syntax ==
+
+Arrays are function abstractions.
+
+(Natural) numbers are de Bruijn indices.
+
+Commas denote (curried) function application, associating to the left.
+
+__(underscored parentheses) are for overriding the precedence of commas.
+
+All other constructs are treated as their PHP values.
+
+== Usage ==
+
+Write your Plumb straight in your PHP; there's no need to wrap it in quotes or
+anything.
+
+To turn a Plumb definition into a PHP function, pass it to the `plumb` function.
