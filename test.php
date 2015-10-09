@@ -20,7 +20,7 @@ deftests([
                return ($result === $n)? 0 : get_defined_vars();
              },
 
-  'comp'  => function ($l, $m, $n) {
+  'comp'  => function($l, $m, $n) {
                $lhs = plumb([[[2, __(1, 0)]]],
                             op('+', $l),
                             op('*', $m),
@@ -29,11 +29,17 @@ deftests([
                return ($lhs === $rhs)? 0 : get_defined_vars();
              },
 
-  'nest'  => function ($n) {
+  'nest'  => function($n) {
                $lhs = plumb([__('+', __('*', 0, 0)),
                              __(__('id', 'id'), 0)],
                             $n);
                $rhs = ($n+1) * $n;
+               return ($lhs === $rhs)? 0 : get_defined_vars();
+             },
+
+  'ops'   => function($m, $n) {
+               $lhs = plumb([['+', 0, 1]], $m, $n);
+               $rhs = $m + $n;
                return ($lhs === $rhs)? 0 : get_defined_vars();
              },
 ]);
